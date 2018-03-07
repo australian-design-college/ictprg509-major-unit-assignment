@@ -1,18 +1,22 @@
-// @flow
-
 import React from "react";
+import { Col, Grid, Row } from "react-bootstrap";
 
+import Content from "./Content";
 import s from "./Root.scss";
 import Sidebar from "./Sidebar";
 
 const Root = () => {
   return (
-    <div className={s.wrapper}>
-      <div className={s.sidebar}>
-        <Sidebar />
-      </div>
-      <div className={s.content}>qwer</div>
-    </div>
+    <Grid>
+      <Row>
+        <Col xs={4}>
+          <Sidebar />
+        </Col>
+        <Col xs={8}>
+          <Content />
+        </Col>
+      </Row>
+    </Grid>
   );
 };
 

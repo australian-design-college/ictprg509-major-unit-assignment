@@ -1,15 +1,19 @@
-// @flow
+import React, { Component } from "react";
 
-import React from "react";
-import { Well } from "react-bootstrap";
+import NumberInput from "@root/generic-components/NumberInput";
 
-const Sidebar = () => {
-  return (
-    <div>
-      <strong>How old are you this year?</strong>
-      <Well>Create your number input and put it here.</Well>
-    </div>
-  );
-};
+export default class Sidebar extends Component {
+  state = { age: null };
 
-export default Sidebar;
+  handleUpdate = age => this.setState({ age });
+
+  render() {
+    return (
+      <div>
+        <h4>In what year were you born?</h4>
+        <NumberInput onUpdate={this.handleUpdate} />
+        {this.state.age && <h4>Oh, you're {this.state.age} years old!</h4>}
+      </div>
+    );
+  }
+}
