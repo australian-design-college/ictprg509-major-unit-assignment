@@ -3,16 +3,16 @@ import React, { Component } from "react";
 import NumberInput from "@root/generic-components/NumberInput";
 
 export default class Sidebar extends Component {
-  state = { age: null };
+  state = { yearBorn: null };
 
-  handleUpdate = age => this.setState({ age });
+  handleUpdate = yearBorn => this.setState({ yearBorn });
 
   render() {
     return (
       <div>
         <h4>In what year were you born?</h4>
         <NumberInput onUpdate={this.handleUpdate} />
-        {this.state.age && <h4>Oh, you're {this.state.age} years old!</h4>}
+        {this.state.yearBorn && <h4>Oh, you were born in {this.state.yearBorn}?</h4>}
       </div>
     );
   }
